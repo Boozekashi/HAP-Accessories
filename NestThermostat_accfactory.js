@@ -42,7 +42,7 @@ function genMAC(id){
 }
 
 var getNestAccessToken = function() {
-	var httpSync = require('http-sync');
+	var httpSync = require('http-sync-4');
 
   var request = httpSync.request({
     method: 'POST',
@@ -76,7 +76,7 @@ var getNestAccessToken = function() {
 
 var getNestThermostats = function() {
   console.log("Asking Nest for Thermostats...");
-  var httpSync = require('http-sync');
+  var httpSync = require('http-sync-4');
 
   var request = httpSync.request({
     method: 'GET',
@@ -139,7 +139,7 @@ var getNestThermostats = function() {
 
 
 var execute = function(id,characteristic,value) {
-  var httpSync = require('http-sync');
+  var httpSync = require('http-sync-4');
   var body = "";
   if(characteristic === "target_temperature") {
     characteristic += "_c";
@@ -194,7 +194,7 @@ var execute = function(id,characteristic,value) {
 var getValue = function(id,characteristic) {
   var body = "";
   
-  var httpSync = require('http-sync');
+  var httpSync = require('http-sync-4');
 
   var request = httpSync.request({
     method: 'GET',
